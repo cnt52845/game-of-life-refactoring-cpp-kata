@@ -19,7 +19,7 @@ TEST(GameTest, UnderPopulation)
         {0, 0, 0},
         {0, 0, 0},
     };
-    EXPECT_EQ(game.grid, expected_grid);
+    EXPECT_EQ(game.get_grid(), expected_grid);
 }
 
 TEST(GameTest, TwoOrThreeNeighborsLiveOn)
@@ -37,7 +37,7 @@ TEST(GameTest, TwoOrThreeNeighborsLiveOn)
         {0, 0, 1, 0, 0},
         {0, 0, 1, 0, 0},
     };
-    EXPECT_EQ(game.grid, expected_grid);
+    EXPECT_EQ(game.get_grid(), expected_grid);
 }
 
 TEST(GameTest, OverPopulation)
@@ -59,7 +59,7 @@ TEST(GameTest, OverPopulation)
         {0, 1, 1, 1, 0},
         {0, 0, 0, 0, 0},
     };
-    EXPECT_EQ(game.grid, expected_grid);
+    EXPECT_EQ(game.get_grid(), expected_grid);
 }
 
 TEST(GameTest, OverPopulationAcrossBoundaries)
@@ -81,7 +81,7 @@ TEST(GameTest, OverPopulationAcrossBoundaries)
         {0, 0, 0, 0, 0},
         {1, 0, 0, 1, 1},
     };
-    EXPECT_EQ(game.grid, expected_grid);
+    EXPECT_EQ(game.get_grid(), expected_grid);
 }
 
 TEST(GameTest, Reproduction)
@@ -101,5 +101,5 @@ TEST(GameTest, Reproduction)
         {0, 0, 1, 0, 0},
         {0, 0, 0, 0, 0},
     };
-    EXPECT_EQ(game.grid, expected_grid);
+    EXPECT_EQ(game.get_grid(), expected_grid);
 }

@@ -84,5 +84,8 @@ public:
         grid = new_grid;
     }
 
+    const std::vector<std::vector<size_t>>& get_grid() const { return grid; }
+
+private:
     std::vector<std::vector<size_t>> grid;
 };
