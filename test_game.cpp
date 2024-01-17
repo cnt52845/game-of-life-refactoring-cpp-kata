@@ -103,3 +103,23 @@ TEST(GameTest, Reproduction)
     };
     EXPECT_EQ(game.grid, expected_grid);
 }
+
+TEST(GameTest, ImmortalCellAliveUnderpopulation)
+{
+    std::vector<std::vector<size_t>> initial_grid = {
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 2, 0, 0},
+        {0, 0, 0, 0, 0},
+    };
+    Game game(initial_grid);
+    game.iterate();
+
+    std::vector<std::vector<size_t>> expected_grid = {
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 2, 0, 0},
+        {0, 0, 0, 0, 0},
+    };
+    EXPECT_EQ(game.grid, expected_grid);
+}
